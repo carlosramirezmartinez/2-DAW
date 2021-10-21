@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Colores</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <input type="button" value="Generar color!" onclick="generarNuevoColor()">
+
+    <script>
+        function generarNuevoColor() {
+            var simbolos = "0123456789ABCDEF";
+            var color = "#";
+            //6 caracteres hexadecimales
+            for (var i = 0; i < 6; i++) {
+                color = color + simbolos[Math.floor(Math.random() * 16)];
+            }
+
+            document.body.style.background = color;
+            //alert(color);
+        }
+    </script>
+</body>
+
+</html>

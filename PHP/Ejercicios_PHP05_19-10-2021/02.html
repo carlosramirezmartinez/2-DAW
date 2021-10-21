@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>Formulario de subida de archivos</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h2>Introduzca sus datos:</h2>
+    <!-- el atributo enctype del form debe valer "multipart/form-data" -->
+    <!-- el atributo method del form debe valer "post" -->
+    <form enctype="multipart/form-data" action="registrar.php" method="post">
+        <label for="nombre">Indique su nombre</label>
+        <input type="text" name="nombre"><br>
+        <label for="correo">Indique su e-mail</label>
+        <input type="email" name="correo"><br>
+        <label for="contraseña">Indique su contraseña</label>
+        <input type="password" name="contraseña"><br>
+        <label for="contraseña">Indique su contraseña</label>
+        <input type="password" name="contraseña2"><br>
+
+        <input type="submit" value="Subir usuario" />
+    </form>
+</body>
+
+</html>

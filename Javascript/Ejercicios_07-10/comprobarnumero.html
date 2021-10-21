@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Introduce numero: <input type="text" name="numero"></p>
+    <p><input type="button" value="Comprobar" onclick="esNumero();"></p>
+    <script>
+        function esNumero() {
+            let a = document.getElementsByName("numero")[0].value;
+            if (!isNaN(a)) {
+                alert('Es un número');
+            } else {
+                alert('No es un número');
+            }
+        }
+    </script>
+</body>
+
+</html>
