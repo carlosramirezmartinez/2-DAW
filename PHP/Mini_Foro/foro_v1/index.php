@@ -25,7 +25,7 @@ if ( !isset($_REQUEST['orden']) ){
 } 
 else {
     switch ($_REQUEST['orden']){
-        
+//SESION        
         case "Entrar":
             // Chequear usuario
             if ( isset($_REQUEST['nombre']) && isset($_REQUEST['contraseña']) && 
