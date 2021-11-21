@@ -1,0 +1,28 @@
+EJERCICIO SOBRE POO EN PHP - II
+
+Se desea implementar una clase denominada Reloj que codifique el funcionamiento básico de una reloj con alarma. Para ello se definen los siguientes atributos y métodos
+
+Atributos: Todos privados
+ Métodos de instancia: 
+    • Segundos: un entero donde se guardan los segundos desde las 00:00:00;
+    • Formato24: valor lógico , indica si la información a mostrar el 24 o 12 horas 
+ 
+Métodos:
+1)  Constructor  donde se indica la hora, minutos y segundos con los que se inicia el reloj. El formato de hora es por defecto en 24. 
+
+2)  Mostrar la hora: genera un String con el  formado de hora  22:30:23 o 10:30:23 pm si el atributos Formato24 es falso
+
+3)Cambiar formato24  que recibe un valor true si quiero formato de 24 o falso si quiero de 12
+
+4)  Tictac : incrementa en  un segundo el valor de reloj
+
+5) Comparar Hora, recibe como parámetro otro objeto Reloj y me devuelve el número de segundos que tiene de diferencia con el objeto.
+
+Realizar la siguiente clase de prueba de clase Reloj
+
+Mejora: Reloj con alarma
+Queremos hacer añadir la posibilidad de el reloj tenga la función de alarma para ello añadiremos un nuevo atributo de tipo entero
+ con la hora de la alarma, un valor lógico que indica si está o no activada la alarma. Así mismo definiremos dos métodos nuevos:
+  un método que permita fijar alarma   a una hora y minutos determinada y otro método que permita activar o desactivar 
+  la alarma en función de un valor lógico.  Si en el método tictac llegamos a la hora de alarma mostraremos un mensaje
+   por pantalla indicando que la alarma a la hora indicada está sonando.
