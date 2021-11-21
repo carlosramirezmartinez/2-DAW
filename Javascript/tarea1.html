@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volcanes</title>
+
+</head>
+
+<body>
+
+    <form>
+        <label for="">Indice: </label> <input type="text">
+
+        <input type="button" value="Busqueda" onclick="pasarArray();"><br><br>
+
+        <textarea name="caja" id="visor" cols="40" rows="10"></textarea>
+    </form>
+    <script>
+        var volcanes = ["Cumbre Vieja", "Kilauea", "etna", "ibi", "krakatoa"];
+
+
+        function pasarArray() {
+            if (document.getElementsByTagName("input")[0].value == "ibi") {
+                document.getElementById("visor").value = "El volcan ibi esta guapisimo";
+            } else {
+                document.getElementById("visor").value = "Ese volcan no existe"
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

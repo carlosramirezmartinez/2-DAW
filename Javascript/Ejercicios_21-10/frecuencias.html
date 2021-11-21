@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var i = 0;
+        var uno = 0,
+            dos = 0,
+            tres = 0,
+            cuatro = 0,
+            cinco = 0,
+            seis = 0,
+            siete = 0,
+            ocho = 0,
+            nueve = 0,
+            diez = 0;
+        do {
+            var aleatorio = Math.round(Math.random() * 9) + 1;
+            i++;
+            switch (aleatorio) {
+                case 1:
+                    uno++;
+                    break;
+                case 2:
+                    dos++;
+                    break;
+                case 3:
+                    tres++;
+                    break;
+                case 4:
+                    cuatro++;
+                    break;
+                case 5:
+                    cinco++;
+                    break;
+                case 6:
+                    seis++;
+                    break;
+                case 7:
+                    siete++;
+                    break;
+                case 8:
+                    ocho++;
+                    break;
+                case 9:
+                    nueve++;
+                    break;
+                case 10:
+                    diez++;
+                    break;
+            }
+
+        } while (i < 10000);
+        document.write("Frecuencias");
+        document.write("</br>");
+
+        document.write("Numero 1 : " + uno);
+        document.write("</br>");
+
+        document.write("Numero 2 : " + dos);
+        document.write("</br>");
+
+        document.write("Numero 3 : " + tres);
+        document.write("</br>");
+
+        document.write("Numero 4 : " + cuatro);
+        document.write("</br>");
+
+        document.write("Numero 5 : " + cinco);
+        document.write("</br>");
+
+        document.write("Numero 6 : " + seis);
+        document.write("</br>");
+
+        document.write("Numero 7 : " + siete);
+        document.write("</br>");
+
+        document.write("Numero 8 : " + ocho);
+        document.write("</br>");
+
+        document.write("Numero 9 : " + nueve);
+        document.write("</br>");
+
+        document.write("Numero 10 : " + diez);
+    </script>
+</body>
+
+</html>

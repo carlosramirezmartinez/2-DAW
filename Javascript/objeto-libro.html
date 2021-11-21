@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script language='javascript'>
+        var biblioteca = new Array();
+        var titulo;
+        var autor;
+        var editorial;
+        var anno;
+        var signatura;
+        //var ejemplos=new Libro (,,,,,)
+
+        function Ejemplar(titulo, autor, editorial, anno, signatura) {
+            this.titulo = titulo;
+            this.autor = autor;
+            this.editorial = editorial;
+            this.anno = anno;
+            this.signatura = signatura;
+            this.mostrarDatos = function() {
+                var msg = 'Los datos del libro son: ' + this.titulo;
+                alert(msg);
+            }
+        }
+
+        function añadir() {
+
+        }
+
+        function consultar() {
+            for (let ibro of biblioteca) {
+
+            }
+        }
+    </script>
+
+
+    <label>Titulo&nbsp;&nbsp;&nbsp;&nbsp;</label><input name="titulo" type="text" /><br/><br/>
+    <label>Numero Matricula&nbsp;&nbsp;</label><input name="autor" type="text" /><br/><br/>
+    <label>Editorial&nbsp;&nbsp;&nbsp;</label><input name="editorial" type="text" /><br/><br/>
+    <label>Año Publicacion&nbsp;</label><input name="anno" type="text" /><br/><br/>
+    <label>Signatura&nbsp;&nbsp;&nbsp;</label><input name="signatura" type="text" /><br/><br/>
+    <input type="button" value="Añadir" onclick='añadir()' /> <input type="button" value="Consultar" onclick='consultar()' />
+</body>
+
+</html>

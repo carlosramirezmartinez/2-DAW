@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Simulación del juego del Dado</title>
+</head>
+<body>
+
+<h1 align="center"><b>Simulación del Dado<br>
+<font size="4">Simulado implementado con Javascript</font></b></h1>
+
+<p><b><font size="4" color="#FF0000">Descripción:<br>
+</font>En&nbsp; este Script &quot;<font size="3">Simulador de Javascript </font>&quot;;<br>
+hace que&nbsp;al tocar el boton sea como tirar el Dado, para que dé un numero
+del 1 al 6.</b></p>
+<p align="center">
+<!-------------- Inicio Script -------------->
+
+<img src="" name="midado" width="63" height="64">
+<form>
+
+<p align="center">
+
+<input type="button" value="Tira el Dado" onClick="tirodado()">
+</form>
+<script>
+function tirodado(){
+//create a random integer between 1 and 6
+var randomdice=Math.round(Math.random()*6)
+document.images["midado"].src="dado-"+ randomdice + ".png"
+}
+</script>
+<!-------------- fin Script ----------------->
+</body>
+
+</html>

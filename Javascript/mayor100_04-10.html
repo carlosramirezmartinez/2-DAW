@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>+100</title>
+</head>
+
+<body>
+    <form>
+        <p>Valor: <input type="number" id="numero"></p>
+        <p>
+            <input type="button" value="Comprobasió" onclick="calculaValor();">
+
+        </p>
+    </form>
+    <script>
+        document.write("<p>Escriba un numero mayor de 100, sino, no va a entrar</p>");
+
+        function calculaValor() {
+            if (document.getElementById("numero").value > 100) { //Id es unico
+                //Alerta con el resultado
+                alert("Correcto");
+            } else if (document.getElementById("numero").value <= 100) {
+                alert("Introduzca otro valor de nuevo")
+            } else if (document.getElementById("numero").value <= "" || " ") {
+                //break;
+            }
+        }
+    </script>
+</body>
+
+</html>

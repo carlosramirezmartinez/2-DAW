@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <title>Simulacion de un Dado</title>
+</head>
+
+<body>
+    <form>
+        <input type="button" value="Tira el Dado" onClick="tirodado()">
+    </form>
+    <script>
+        function tirodado() {
+            var random = Math.round(Math.random() * 6); //Entero entre 1 y 6
+            if (random == 0) {
+                random = random + 1;
+            }
+            alert("Has sacado un " + random);
+        }
+    </script>
+
+</body>
+
+</html>

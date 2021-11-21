@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Marca: <input type="text" name="coche"><br><br> Modelo: <input type="text" name="coche"><br><br> Año: <input type="text" name="coche"><br><br>
+    <hr> Propietario:
+    <br><br> Nombre: <input type="text" name="propietario"><br><br> Apellidos: <input type="text" name="propietario"><br><br> Teléfono: <input type="text" name="propietario"><br><br>
+    <input type="button" value="Ver Datos" onclick="verDatos()"><br><br>
+    <textarea name="Datos" id="datos" cols="40" rows="10"></textarea>
+    <script>
+        var tuauto = {
+            marca: "Lamborghini",
+            modelo: "Aventador",
+            año: "2021",
+            nombre: "Carlos",
+            apellidos: "Ramirez",
+            telefono: "666666666"
+        }
+        document.getElementById("datos").value = "Los datos disponibles del objeto son: " + tuauto.marca + '\t' + tuauto.modelo + '\t' + tuauto.año + '\t' + '\n' + tuauto.nombre + '\t' + tuauto.apellidos + '\t' + tuauto.telefono;
+
+        function verDatos() {
+
+            for (let i = 0; i < document.getElementsByTagName("input").length; i++) {
+                document.getElementsByTagName("input")[i].value = Object.values(tuauto)[i];
+
+            }
+        }
+    </script>
+</body>
+
+</html>

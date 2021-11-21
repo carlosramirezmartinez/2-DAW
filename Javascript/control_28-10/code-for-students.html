@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Carlos Ramirez 2ºDAW-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica de evaluación 28 octubre 2021</title>
+</head>
+
+<body>
+    <center>
+        <form name="form1" style="align-items: center;">
+            <div>
+                <label for="cjnombre">Nombre: </label><input type="text" name="cjnombre"><br><br>
+            </div>
+            <div>
+                <label>Visualizar: </label><br><br>
+                <textarea cols="30" rows="15"></textarea>
+            </div>
+            <br>
+            <div>
+                <input type="button" value="Añadir" onclick="añadir();">
+                <input type="button" value="Buscar" onclick="buscar();">
+                <input type="button" value="Eliminar" onclick="eliminar();">
+                <input type="button" value="Visualizar" onclick="visualizar();">
+                <br><br>
+            </div>
+            <div>
+                <input type="button" value="Limpiar" onclick="limpiar();">
+            </div>
+        </form>
+
+        <script>
+            //A
+            function añadir() {
+
+                var alumnos = [];
+                //let contador = 0;
+                let nombre = document.getElementsByName("cjnombre")[0].value;
+                console.log(nombre);
+                let posicion = prompt("Hay " + alumnos.length + " alumnos /n" + "¿En que posicion desea añadir al alumno? /n" +
+                    "Introduzca Inicio, Final o numero");
+                for (var i = 0; i <= alumnos.length; i++) {
+                    if (posicion == "Inicio") {
+                        alumnos.unshift(nombre);
+                        document.getElementsByTagName("textarea").value = nombre;
+                    }
+
+                    if (posicion == "Final") {
+                        alumnos.push(nombre);
+                        document.getElementsByTagName("textarea").value = nombre;
+                    }
+                }
+            }
+            //B
+            function buscar() {
+                let nombre = document.getElementsByName("cjnombre")[0].value;
+                if (alumnos[i] == nombre) {
+                    alert("El alumno solicitado existe");
+                    alert("Si desea eliminarlo deberá: Pulsar el boton eliminar");
+                } else {
+                    alert("El alumno solicitado NO está en la lista");
+                    alert("Puede añadirlo pulsando el boton de Añadir");
+                }
+
+                /*
+                let indice;
+                indice = document.form1.getElementsByTagName("textarea")[0].value;
+                texto = "" + volcanes[indice];
+                document.getElementsByTagName("textarea").value = texto;
+                */
+            }
+
+            //C
+            function visualizar() {
+                for (var i = 0; i < alumnos.length; i++) {
+                    alumnoscuadro = alumnoscuadro + alumnos[i] + '\n';
+                }
+                alert(alumnoscuadro);
+            }
+            //D
+            function eliminar() {
+                var alumnos = [];
+                //let contador = 0;
+                var nombre = document.getElementsByName("cjnombre")[0].value;
+                console.log(nombre);
+                var posicion = prompt("Hay " + alumnos.length + " alumnos " + "</br>¿En que posicion desea añadir al alumno? " +
+                    "</br>Introduzca Inicio, Final o numero");
+
+                if (posicion == "Inicio") {
+                    alumnos.shift(nombre);
+                    document.getElementsByTagName("textarea").value = nombre;
+                }
+
+                if (posicion == "Final") {
+                    alumnos.pop(nombre);
+                    document.getElementsByTagName("textarea").value = nombre;
+                }
+            }
+            //E
+            function limpiar() {
+                document.form1.reset();
+            }
+        </script>
+    </center>
+</body>
+
+</html>

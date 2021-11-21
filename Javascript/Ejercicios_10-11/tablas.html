@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Funcion de dibujo de tablas</title>
+    <script src="tabla.js"></script>
+</head>
+<!--3. - Desarrollar una web que permita dibujar una tabla.
+Crea una función en javascript que permita dibujar una tabla.
+
+Como parámetros se indicarán el número de filas y de columnas con dos números. Por
+defecto la función generará una tabla de 10 filas y 4 columnas.
+La tabla se creará con un borde negro de 1pixel entre cada celda, pero un tercer
+parámetro permite indicar el color (por defecto el color será negro). El borde exteerior
+medirá 3 pixeles y siempre será del mismo color que el borde de las celdas.
+La tabla ocupará toda la anchura de la página.
+Usa la función para crear una tabla con borde negro de 10 filas y 4 columnas.
+Úsala de nuevo para generar una tabla de 20 filas y 10 columnas, con borde negro.
+Finalmente, consigue dibujar 10 tablas de 5 filas y 4 columnas que tengan borde
+verde.-->
+
+<body>
+    <script>
+        dibujaTabla();
+        dibujaTabla(20, 10);
+        for (let i = 1; i <= 10; i++) {
+            dibujaTabla(5, 4, "green");
+        }
+    </script>
+</body>
+
+</html>

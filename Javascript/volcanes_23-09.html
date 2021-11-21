@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumar - 21/09/2021</title>
+
+</head>
+
+<body>
+
+    <form>
+        <label for="">Indice: </label> <input type="text">
+
+        <input type="button" value="Busqueda" onclick="buscar();"><br><br>
+
+        <textarea name="caja" id="visor" cols="30" rows="10"></textarea>
+    </form>
+    <script>
+        var volcanes = ["Cumbre Vieja", "Kilauea", "etna", "ibi", "krakatoa"];
+        var texto;
+        //Ver input tagname
+        function buscar() {
+            let indice;
+            indice = document.getElementsByTagName("input")[0].value;
+            texto = "El volcan activo \t solicitado se corresponde \t con " + volcanes[indice];
+            document.getElementById("visor").value = texto;
+            //en vez de indices, probarlo con nombres, con un for, recorrer array e ir comprobando
+        }
+    </script>
+
+
+</body>
+
+</html>

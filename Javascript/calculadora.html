@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        .calculadora {
+            background-color: purple;
+            margin: 0 auto;
+        }
+        
+        td,
+        tr,
+        button {
+            width: 100px;
+            height: 80px;
+            font-size: xx-large;
+        }
+        
+        #resultado {
+            display: block;
+            text-align: center;
+            color: rgb(72, 255, 0);
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table class="calculadora">
+        <tr>
+            <!--Primera fila-->
+            <!--Pantalla resultado-->
+            <td colspan="4"><span id="resultado"></span></td>
+        </tr>
+        <tr>
+            <!--2º fila-->
+            <td><button id="siete">7</button></td>
+            <td><button id="ocho">8</button></td>
+            <td><button id="nueve">9</button></td>
+            <td><button id="division">/</button></td>
+        </tr>
+        <tr>
+            <!--3º fila-->
+            <td><button id="cuatro">4</button></td>
+            <td><button id="cinco">5</button></td>
+            <td><button id="seis">6</button></td>
+            <td><button id="multiplicacion">*</button></td>
+        </tr>
+        <tr>
+            <!--4º fila-->
+            <td><button id="uno">1</button></td>
+            <td><button id="dos">2</button></td>
+            <td><button id="tres">3</button></td>
+            <td><button id="resta">-</button></td>
+        </tr>
+        <tr>
+            <!--5º fila-->
+            <td><button id="igual">=</button></td>
+            <td><button id="reset">C</button></td>
+            <td><button id="cero">0</button></td>
+            <td><button id="suma">+</button></td>
+        </tr>
+    </table>
+
+
+
+    <script>
+        //Asignacion variables
+        //Pasos
+        var valor1; //21
+        var operacion; //+
+        var valor2; //99
+
+        //Botones
+        var resultado = document.getElementById("resultado");
+        var suma = document.getElementById("suma");
+        var resta = document.getElementById("resta");
+        var multiplicacion = document.getElementById("multiplicacion");
+        var division = document.getElementById("division");
+        var cero = document.getElementById("cero");
+        var uno = document.getElementById("uno");
+        var dos = document.getElementById("dos");
+        var tres = document.getElementById("tres");
+        var cuatro = document.getElementById("cuatro");
+        var cinco = document.getElementById("cinco");
+        var seis = document.getElementById("seis");
+        var siete = document.getElementById("siete");
+        var ocho = document.getElementById("ocho");
+        var nueve = document.getElementById("nueve");
+        var reset = document.getElementById("reset");
+
+        //Funciones
+        function limpiar() {
+            resultado.textContent = "";
+        }
+
+        function resolver() {
+            var resu = 0;
+            switch (operacion) {
+                case "+":
+                    resu = parseFloat(valor1) + parseFloat(valor2);
+                    break;
+
+                case "-":
+                    resu = parseFloat(valor1) - parseFloat(valor2);
+                    break;
+
+                case "*":
+                    resu = parseFloat(valor1) * parseFloat(valor2);
+                    break;
+
+                case "/":
+                    resu = parseFloat(valor1) / parseFloat(valor2);
+                    break;
+            }
+            resetear();
+            resultado.innerText = resu;
+        }
+
+        function resetear() {
+            resultado.textContent = "";
+            var valor1 = 0;
+            var operacion = "";
+            var valor2 = 0;
+        }
+        //Eventos para que salgan en el resultado
+        cero.onclick = function(e) {
+            resultado.innerText = resultado.innerText + "0";
+        }
+
+        uno.onclick = function(e) {
+            resultado.innerText = resultado.innerText + "1";
+        }
+
+        dos.onclick = function(e) {
+            resultado.innerText = resultado.innerText + "2";
+        }
+
+        tres.onclick = function(e) {
+            resultado.innerText = resultado.innerText + "3";
+        }
+
+        cuatro.onclick = function(e) {
+            resultado.innerText = resultado.innerText + "4";
+        }
+
+        cinco.onclick = function(e) {
+            resultado.innerText = resultado.innerText + "5";
+        }
+
+        seis.onclick = function(e) {
+            resultado.innerText = resultado.innerText + "6";
+        }
+
+        siete.onclick = function(e) {
+            resultado.innerText = resultado.innerText + "7";
+        }
+
+        ocho.onclick = function(e) {
+            resultado.innerText = resultado.innerText + "8";
+        }
+
+        nueve.onclick = function(e) {
+            resultado.innerText = resultado.innerText + "9";
+        }
+
+        suma.onclick = function(e) {
+            valor1 = resultado.innerText;
+            operacion = "+";
+            limpiar();
+        }
+
+        resta.onclick = function(e) {
+            valor1 = resultado.innerText;
+            operacion = "-";
+            limpiar();
+        }
+
+        multiplicacion.onclick = function(e) {
+            valor1 = resultado.innerText;
+            operacion = "*";
+            limpiar();
+        }
+
+        division.onclick = function(e) {
+            valor1 = resultado.innerText;
+            operacion = "/";
+            limpiar();
+        }
+
+        igual.onclick = function(e) {
+            valor2 = resultado.innerText;
+            resolver();
+        }
+
+
+        reset.onclick = function(e) {
+            resetear();
+        }
+    </script>
+</body>
+
+</html>

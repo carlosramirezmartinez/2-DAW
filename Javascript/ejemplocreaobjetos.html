@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>Ejemplo creacion objetos</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        function CuentaBancaria() {
+            this.nombreTitular = "Nicola";
+            this.apellidosTitular = "Tesla";
+            this.saldo = 600000;
+            this.mostrarDatos = function() {
+                var msg = 'Los datos de la cuenta son Nombre: ' + this.nombreTitular;
+                msg = msg + '; Apellidos: ' + this.apellidosTitular + '; Saldo: ' + this.saldo;
+                alert(msg);
+            }
+        }
+
+        function ejemploCreaObjetos() {
+            var cuenta1 = new CuentaBancaria();
+            msg = 'El saldo en la cuenta bancaria de Tesla es: ' + cuenta1.saldo + ' Euros';
+            alert(msg);
+            cuenta1.mostrarDatos();
+        }
+    </script>
+</head>
+
+<body>
+    <div id="cabecera">
+        <h2>ejemplo creacion objetos</h2>
+        <h3>Ejemplo funciones JavaScript</h3>
+    </div>
+    <div style="color:blue;" id="pulsador" onclick="ejemploCreaObjetos()"> Probar </div>
+</body>
+
+</html>

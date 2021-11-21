@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Controlando elementos de un formulario</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        body {
+            margin-left: 30px;
+            font-family: sans-serif;
+        }
+        
+        h4 {
+            margin: 0;
+        }
+        
+        div {
+            float: left;
+        }
+        
+        .estiloForm,
+        #encuadraImagen,
+        #datos {
+            background-color: #f3f3f3;
+            border: solid 2px black;
+            margin-left: 10px;
+            width: 300px;
+        }
+        
+        .estiloForm {
+            width: 330px;
+            padding: 10px;
+        }
+        
+        #datos {
+            margin-top: 20px;
+            height: 226px;
+            padding: 10px;
+        }
+        
+        #encuadraImagen {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+        }
+        
+        .estiloForm label {
+            display: block;
+            width: 120px;
+            float: left;
+            text-align: right;
+            margin-bottom: 35px;
+            padding-right: 20px;
+        }
+        
+        br {
+            clear: left;
+        }
+        
+        input[type="submit"],
+        input[type="reset"] {
+            margin: 25px 5px 10px 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>COLEGIO HOGWARTS DE MAGIA Y HECHICERIA</h2>
+    <h3>Matricula de alumnos</h3>
+    <div class="estiloForm">
+        <form name="formatricula">
+
+            <label>Fecha</label><input name="fecha" type="text" /><br/>
+            <label>Numero Matricula</label><input name="numatricula" type="text" /><br/>
+            <label>Nombre</label><input name="nombre" type="text" /><br/>
+            <label>Apellido</label><input name="apellido" type="text" /><br/>
+            <h4>Casa Solicitada:</h4><br/>
+            <input type="radio" name="casa" value="Gryffindor" />Gryffindor<br/>
+            <input type="radio" name="casa" value="Hufflepuff" />Hufflepuff<br/>
+            <input type="radio" name="casa" value="Ravenclaw" />Ravenclaw<br/>
+            <input type="radio" name="casa" value="Slytherin" />Slytherin<br/><br/>
+
+            <h4>Materias optativas solicitadas:</h4><br/>
+            <input name="defensa" type="checkbox" value='Defensa' />Defensa<br/>
+            <input name="herbolog�a" type="checkbox" value='Herbologia' />Herbologia<br/>
+            <input name="pociones" type="checkbox" value='Pociones' />Pociones<br/>
+            <input name="encantamientos" type="checkbox" value='Encantamientos' />Encantamientos<br/>
+            <input name="aoscuras" type="checkbox" value='Artes Oscuras' />Artes Oscuras<br/>
+            <input type="button" value="Matricular" onclick='matriculacion()' /> <input type="button" value="Matriculados" onclick='listar()' /> <input type="button" value="Limpiar Formulario" onclick='resetear()' />
+    </div>
+    <div class="estiloForm" style="float:left;">
+        <h3>FICHA DEL ALUMNO</h3>
+        <div name="encuadraImagen"><img name='fotoalumno' src='Dumbledore.jpg' alt="?"> <img name='fotoescudo' src='hogwarts.jpg' alt="?"></div><br/>
+        <div name="datos" style="float:left;">
+            <h4> Datos introducidos: </h4><textarea name='datosficha' cols='35' rows='12'></textarea></div>
+    </div>
+    </form>
+    </div>
+    <script language='javascript'>
+        var alumnosmatriculados = new Array();
+        var nmatricula;
+        var nombreAl;
+        var apellidoAl;
+        var fechamat;
+        var casaask;
+        var optativas = "";
+        var contador = 0;
+        var almatriculados = "";
+
+        //alert(document.formatricula.elements[8].name);
+        //alert(document.formatricula.elements[12].name);
+        var fechamatricula = new Date();
+        var ano = fechamatricula.getFullYear();
+        var mes = parseInt(fechamatricula.getMonth()) + 1;
+        var fechaespanola = fechamatricula.getDate() + '/' + mes + '/' + ano;
+        document.formatricula.fecha.value = fechaespanola;
+        var numeromatricula = ano + '00' + contador;
+        document.formatricula.numatricula.value = numeromatricula;
+
+        function Alumno(nmatricula, nombreAl, apellidoAl, fechamat, casaask, optativas) {
+            this.nmatricula = nmatricula;
+            this.nombreAl = nombreAl;
+            this.apellidoAl = apellidoAl;
+            this.fechamat = fechamat;
+            this.casaask = casaask;
+            this.optativas = optativas;
+        }
+
+        function matriculacion() {
+            document.formatricula.numatricula.value = numeromatricula;
+            for (var i = 0; i < document.formatricula.casa.length; i++) {
+                if (document.formatricula.casa[i].checked) {
+                    casaask = document.formatricula.casa[i].value;
+
+                }
+
+            }
+
+            for (var j = 8; j < 13; j++) {
+                if (document.formatricula.elements[j].checked) {
+                    optativas = optativas + document.formatricula.elements[j].value + '\n' + '\t';
+                    //alert(optativas);
+
+                }
+
+            }
+            document.fotoalumno.src = document.formatricula.apellido.value + '.jpg'
+            document.fotoescudo.src = casaask + '.jpg'
+            var estudiante = new Alumno(numeromatricula, document.formatricula.nombre.value, document.formatricula.apellido.value, fechaespanola, casaask, optativas);
+
+            alumnosmatriculados.push(estudiante);
+            document.formatricula.datosficha.value = estudiante.nmatricula + '\n' + estudiante.nombreAl + '\n' + estudiante.apellidoAl + '\n' + estudiante.fechamat + '\n' + estudiante.casaask + '\n' + '\t' + estudiante.optativas;
+            contador++;
+            numeromatricula = ano + '00' + contador;
+
+
+            optativas = "";
+        }
+
+        function listar() {
+            //Visualizar en un alert alumnos matriculados.
+            for (var k = 0; k < alumnosmatriculados.length; k++) {
+                almatriculados = almatriculados + alumnosmatriculados[k].nombreAl + '\t' + '\t    ' + alumnosmatriculados[k].nmatricula + '\n';
+            }
+            alert(almatriculados);
+
+
+        }
+
+        function resetear() {
+            document.formatricula.reset();
+            document.formatricula.fecha.value = fechaespanola;
+            document.formatricula.numatricula.value = numeromatricula;
+            document.fotoalumno.src = 'Dumbledore.jpg'
+            document.fotoescudo.src = 'hogwarts.jpg'
+        }
+    </script>
+</body>
+
+</html>

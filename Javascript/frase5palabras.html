@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label>Palabra 1</label><input type="text">
+    <label>Palabra 2</label><input type="text">
+    <label>Palabra 3</label><input type="text">
+    <label>Palabra 4</label><input type="text">
+    <label>Palabra 5</label><input type="text">
+    <input type="button" value="presentar" onclick="darClick('Presentar');" ;>
+
+
+</body>
+<script>
+    function darClick() {
+        var frase = prompt("Inroduce una frase de 5 palabras");
+        arrayTexto = frase.split(' ');
+
+        for (var i = 0; i < arrayTexto.length; i++) {
+            document.getElementsByTagName("input")[i].value = arrayTexto[i];
+        }
+    }
+</script>
+
+</html>

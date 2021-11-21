@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Asteriscos</h1>
+    <input type="button" value="A jugar!" onclick="asteriscos()">
+    <p id="p1">
+        <!--Aqui se escriben los numeros que van a salir-->
+    </p>
+    <script>
+        function asteriscos() {
+            //var array = [1, 5, 8, 33, 20, 4, 2, 24, 10, 6, 18, 11, 12, 23, 31, 42, 35, 7, 13, 29];
+            var array = [];
+            //recorro valores
+            for (i = 0; i < 20;) {
+                var numero = Math.floor((Math.random() * 50) + 1);
+            }
+            //en la variable lista almacenamos lo que tiene que escribir en la web (la lista de los números)
+            var lista = "<ul id='ul1'>";
+            for (i = 0; i < 20; i++) {
+                lista += "<li class=\'li1\'>" + numeros[i].toString() + "</li>&nbsp;";
+            }
+            lista = lista + "</ul>";
+            document.getElementById('p1').innerHTML = lista;
+        }
+    </script>
+</body>
+
+</html>

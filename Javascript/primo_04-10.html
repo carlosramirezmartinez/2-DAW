@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Numeros primos</title>
+</head>
+
+<body>
+    <script>
+        function esPrimo(n) {
+            if (n < 1) return false; //Negativo o 0
+            if (n == 1) return true; //el 1 le separamos, no hace falta dividir  
+            for (let i = 2; i * i <= n; i++) {
+                //si el número se puede dividir por el contador, no tenemos un primo
+                if (n % i == 0) return false;
+            }
+            //si hemos salido del bucle sin ejecutar el return, tenemos un número primo
+            return true;
+        }
+
+
+        //escribimos el 1 y 2,sabemos que son primos
+        document.write("<p>1</p><p>2</p>");
+
+        for (let i = 3; i < 1000; i += 2) {
+            if (esPrimo(i))
+                document.write(`<p>${i}</p>`);
+        }
+    </script>
+</body>
+
+</html>
